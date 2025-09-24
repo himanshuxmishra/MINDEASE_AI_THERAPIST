@@ -1,5 +1,5 @@
 def main():
-    print("Hello from safespace-ai-agent!")
+    print("Hello from MINDEASE_safespace-ai-agent!")
 
 
 if __name__ == "__main__":
