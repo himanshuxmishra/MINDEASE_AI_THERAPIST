@@ -1,8 +1,7 @@
-# ------------------ IMPORTS ------------------
+
 from langchain.agents import tool
 from tools import query_medgemma, call_emergency
 
-# ------------------ TOOLS ------------------
 
 @tool
 def ask_mental_health_specialist(query: str) -> str:
@@ -37,7 +36,7 @@ def locate_therapist_tool(location: str) -> str:
     )
 
 
-# ------------------ AGENT SETUP ------------------
+
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 from config import OPENAI_API_KEY
@@ -58,7 +57,6 @@ Always take necessary action. Respond kindly, clearly, and supportively.
 """
 
 
-# ------------------ RESPONSE PARSER ------------------
 
 def parse_response(stream):
     """
@@ -100,7 +98,7 @@ def parse_response(stream):
                     if getattr(msg, "content", None):
                         final_response = msg.content
 
-    # ✅ Safety net: ensure we always return something
+    
     if not final_response:
         final_response = (
             "I'm here with you. Could you please share more so I can better understand and support you?"
